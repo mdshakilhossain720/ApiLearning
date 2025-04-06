@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'config/theme/theme.dart';
 import 'views/splash_screen.dart';
 
 void main() {
@@ -27,10 +28,9 @@ class MyApp extends StatelessWidget {
       locale: const Locale('en', 'US'),
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: AppTheme.light,
       home: SplashScreen(),
+      
     );
   }
 }
