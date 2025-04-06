@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'views/splash_screen.dart';
 
@@ -17,13 +18,13 @@ class MyApp extends StatelessWidget {
         const Locale('en', 'US'),
         const Locale('bn', 'BD'),
       ],
-      locale: Locale('en', 'US'),
-     localizationsDelegates: const [
-      
-        DefaultMaterialLocalizations.delegate,
-        DefaultWidgetsLocalizations.delegate,
-        DefaultCupertinoLocalizations.delegate,
+      localizationsDelegates: [
+        AppLocalizations.delegate, // 👈 your generated delegate
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
+      locale: const Locale('en', 'US'),
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
