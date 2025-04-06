@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:apipratices/utils/request_handler.dart';
 import 'package:dio/dio.dart';
 import 'package:riverpod/riverpod.dart';
 
@@ -7,9 +8,9 @@ import 'package:riverpod/riverpod.dart';
 class ApiClient {
   final Dio _dio = Dio();
 
-  // ApiClient() {
-  //   addApiInterceptors(_dio);
-  // }
+  ApiClient() {
+    addApiInterceptors(_dio);
+  }
 
   Map<String, dynamic> defaultHeaders = {
     HttpHeaders.authorizationHeader: null,
