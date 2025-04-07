@@ -1,9 +1,6 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 
 class ApGlobalFunctions {
   ApGlobalFunctions._();
@@ -23,12 +20,6 @@ class ApGlobalFunctions {
     );
   }
 
-
-
-
-
-    
-  
   static void showCustomSnackbar({
     required String message,
     required bool isSuccess,
@@ -43,8 +34,7 @@ class ApGlobalFunctions {
       ),
       dismissDirection:
           isTop ? DismissDirection.startToEnd : DismissDirection.down,
-      backgroundColor:
-          isSuccess ? Colors.green : Colors.red,
+      backgroundColor: isSuccess ? Colors.green : Colors.red,
       content: Text(message),
       margin: isTop
           ? EdgeInsets.only(
@@ -74,9 +64,10 @@ class ApGlobalFunctions {
         height: size ?? adjustedHeight,
         //height: size ?? MediaQuery.of(context).size.height - 200,
         child: Center(
-          child: Text(text ?? 'No item found',
-             // style: AppTextStyle(context).bodyTextSmall
-             ),
+          child: Text(
+            text ?? 'No item found',
+            // style: AppTextStyle(context).bodyTextSmall
+          ),
         ),
       ),
     );
@@ -132,12 +123,6 @@ class ApGlobalFunctions {
       },
     );
   }
-
- 
-
- 
-
-
 
   static showSnacbarMethod({
     required BuildContext context,

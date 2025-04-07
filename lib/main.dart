@@ -10,14 +10,14 @@ import 'utils/global_function.dart';
 import 'views/splash_screen.dart';
 
 void main() {
-    ApGlobalFunctions.changeStatusBarColor(
-      color: Colors.white, 
-      iconBrightness: Brightness.dark,
-    );
-  //  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-  //   systemNavigationBarColor: Colors.blue, // navigation bar color
-  //   statusBarColor: Colors.pink, // status bar color
-  // ));
+  // ApGlobalFunctions.changeStatusBarColor(
+  //   color: Colors.white,
+  //   iconBrightness: Brightness.dark,
+  // );
+   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Colors.blue, // navigation bar color
+    statusBarColor: Colors.pink, // status bar color
+  ));
   runApp(const MyApp());
 }
 
@@ -27,30 +27,29 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      builder: (context,child) {
-        return MaterialApp(
-          supportedLocales: [
-            const Locale('en', 'US'),
-            const Locale('bn', 'BD'),
-          ],
-          localizationsDelegates: [
-            AppLocalizations.delegate, // 👈 your generated delegate
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          locale: const Locale('en', 'US'),
-          title: 'Flutter Demo',
-          debugShowCheckedModeBanner: false,
-          theme: AppTheme.light,
-          home: SplashScreen(),
-          builder: EasyLoading.init(),
-          
-        );
-      }
-    );
+        designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+            navigatorKey: ApGlobalFunctions.navigatorKey,
+            supportedLocales: [
+              const Locale('en', 'US'),
+              const Locale('bn', 'BD'),
+            ],
+            localizationsDelegates: [
+              AppLocalizations.delegate, // 👈 your generated delegate
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            locale: const Locale('en', 'US'),
+            title: 'Flutter Demo',
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.light,
+            home: SplashScreen(),
+            builder: EasyLoading.init(),
+          );
+        });
   }
 }

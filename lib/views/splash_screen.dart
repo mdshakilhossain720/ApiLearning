@@ -16,10 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-      ApGlobalFunctions.changeStatusBarColor(
-      color: Colors.white, 
-      iconBrightness: Brightness.dark,
-    );
+    //   ApGlobalFunctions.changeStatusBarColor(
+    //   color: Colors.white, 
+    //   iconBrightness: Brightness.dark,
+    // );
    
     Timer(Duration(seconds: 3), () {
       Navigator.pushReplacement(
