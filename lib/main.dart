@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -14,18 +15,18 @@ import 'utils/notifaction_handler.dart';
 import 'views/splash_screen.dart';
 
 Future<void> main() async {
-   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
-
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
   await setupFlutterNotifications();
   FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
   firebaseMessagingForgroundHandler();
   print('FCM TOKEN: ${await FirebaseMessaging.instance.getToken()}');
-  
-   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colors.blue, // navigation bar color
     statusBarColor: Colors.pink, // status bar color
   ));
