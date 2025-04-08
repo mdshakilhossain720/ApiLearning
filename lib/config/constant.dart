@@ -7,10 +7,7 @@ class AppConstants {
   // Codecanyon
    static const String baseUrl = 'https://demo.readylms.app/api';
 
-  // dev
-  // dev
- // static const String baseUrl = 'https://mmoschool.net/api';
-  // static const String baseUrl = 'https://dev.readylms.app/api';
+  
 
   static const String register = '$baseUrl/register';
   static const String loginUrl = '$baseUrl/login';
@@ -67,4 +64,4 @@ class AppConstants {
   static const double hintColorBorderOpacity = .2;
 }
 
-enum FileSystem { document, audio, image, video, iframe }
+
