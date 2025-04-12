@@ -7,6 +7,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'config/theme/theme.dart';
 import 'firebase_options.dart';
@@ -30,6 +31,7 @@ Future<void> main() async {
     systemNavigationBarColor: Colors.blue, // navigation bar color
     statusBarColor: Colors.pink, // status bar color
   ));
+  await Hive.initFlutter();
   runApp(const MyApp());
 }
 
